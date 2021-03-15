@@ -43,7 +43,7 @@ nvbuf-memory-type=0
 enable=1
 #Type - 1=CameraV4L2 2=URI 3=MultiURI
 type=3
-uri=file://../vids/sample_%d.mp4
+uri=file://../../streams/sample_1080p_h264.mp4
 num-sources=4
 drop-frame-interval=1
 gpu-id=0
@@ -53,36 +53,48 @@ gpu-id=0
 cudadec-memtype=0
 
 [sink0]
-enable=1
+enable=0
 #Type - 1=FakeSink 2=EglSink 3=File
 type=2
-sync=0
+sync=1
 source-id=0
 gpu-id=0
 nvbuf-memory-type=0
 
 [sink1]
+enable=0
+type=3
+#1=mp4 2=mkv
+container=1
+#1=h264 2=h265
+codec=1
+#encoder type 0=Hardware 1=Software
+enc-type=0
+sync=0
+#iframeinterval=10
+bitrate=2000000
+#H264 Profile - 0=Baseline 2=Main 4=High
+#H265 Profile - 0=Main 1=Main10
+profile=0
+output-file=out.mp4
+source-id=0
+
+[sink2]
 enable=1
 #Type - 1=FakeSink 2=EglSink 3=File 4=RTSPStreaming
 type=4
 #1=h264 2=h265
 codec=1
+#encoder type 0=Hardware 1=Software
+enc-type=0
 sync=0
 bitrate=4000000
+#H264 Profile - 0=Baseline 2=Main 4=High
+#H265 Profile - 0=Main 1=Main10
+profile=0
 # set below properties in case of RTSPStreaming
 rtsp-port=8554
 udp-port=5400
-
-[sink2]
-enable=1
-#Type - 1=FakeSink 2=EglSink 3=File 4=RTSPStreaming
-type=3
-#1=h264 2=h265
-codec=1
-sync=0
-bitrate=4000000
-container=1
-output-file=./output.mp4
 
 [osd]
 enable=1
