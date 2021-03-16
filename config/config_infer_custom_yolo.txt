@@ -62,9 +62,7 @@ gpu-id=0
 #0=RGB, 1=BGR
 model-color-format=0
 onnx-file=../tinyyolov2-8.onnx
-#custom-network-config=yolov2.cfg
-#model-file=yolov2.weights
-model-engine-file=../tiny_yolov2.onnx_b1_fp16.engine
+model-engine-file=../tinyyolov2-8.onnx_b3_gpu0_fp16.engine
 labelfile-path=../labels.txt
 ## 0=FP32, 1=INT8, 2=FP16 mode
 network-mode=2
