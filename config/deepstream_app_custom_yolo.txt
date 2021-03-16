@@ -135,14 +135,18 @@ nvbuf-memory-type=0
 [primary-gie]
 enable=1
 gpu-id=0
-#model-engine-file=model_b1_fp32.engine
-labelfile-path=../labels.txt
-batch-size=1
+model-engine-file=../tinyyolov2-8.onnx_b3_gpu0_fp16.engine
+#Required to display the PGIE labels, should be added even when using config-file
+#property
+#labelfile-path=../labels.txt
+batch-size=3
 #Required by the app for OSD, not a plugin property
 bbox-border-color0=1;0;0;1
 bbox-border-color1=0;1;1;1
 bbox-border-color2=0;0;1;1
 bbox-border-color3=0;1;0;1
+interval=0
+#Required by the app for SGIE, when used along with config-file property
 gie-unique-id=1
 nvbuf-memory-type=0
 config-file=config_infer_custom_yolo.txt
