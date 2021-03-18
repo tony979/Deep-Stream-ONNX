@@ -72,4 +72,4 @@ is-classifier=0
 maintain-aspect-ratio=1
 output-blob-names=grid
 parse-bbox-func-name=NvDsInferParseCustomYoloV2Tiny
-custom-lib-path=../custom_bbox_parser/libnvds_infercustomparser_yolo.so
+custom-lib-path=../custom_bbox_parser/libnvdsinfer_yolov2.so
