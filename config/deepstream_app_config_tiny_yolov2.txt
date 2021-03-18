@@ -162,4 +162,4 @@ nvbuf-memory-type=0
 config-file=config_infer_custom_tiny_yolov2.txt
 
 [tests]
-file-loop=1
+file-loop=0
